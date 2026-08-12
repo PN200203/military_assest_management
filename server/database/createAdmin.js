@@ -17,10 +17,7 @@ const createAdmin = async () => {
       return;
     }
 
-    const passwordHash = await bcrypt.hash(
-      password,
-      12
-    );
+    const passwordHash = await bcrypt.hash(password, 12);
 
     await pool.query(
       `
@@ -50,11 +47,9 @@ const createAdmin = async () => {
     console.log("Password:", password);
     console.log("Role: ADMIN");
     console.log("=================================");
+
   } catch (error) {
-    console.error(
-      "Error creating admin:",
-      error
-    );
+    console.error("Error creating admin:", error);
   } finally {
     await pool.end();
   }
