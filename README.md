@@ -1,90 +1,78 @@
 # Military Asset Management System
 
-A full-stack web application for managing military assets, equipment inventory, purchases, transfers, assignments, and expenditures across different bases.
+A full-stack web application for managing and tracking military assets, equipment inventory, purchases, transfers, assignments, and expenditures across multiple military bases.
 
-The application provides a centralized dashboard for tracking asset quantities and stock movements while using role-based authentication and secure API access.
+The application provides a centralized dashboard for monitoring inventory and stock movements while using secure authentication and role-based access control.
 
 ---
 
 ## 🚀 Live Application
 
 ### Frontend
+
 https://military-asset-management-client.onrender.com
 
 ### Backend API
+
 https://military-asset-management-api-l7s1.onrender.com
 
 ### Backend Health Check
+
 https://military-asset-management-api-l7s1.onrender.com/api/health
 
 ### GitHub Repository
+
 https://github.com/PN200203/military_assest_management
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-The Military Asset Management System helps administrators manage and monitor military equipment and asset movements.
+The **Military Asset Management System** is a full-stack web application designed to manage military equipment and assets across multiple bases.
 
-The system tracks:
+The system allows administrators to:
 
-- Equipment types
-- Asset inventory
-- Purchases
-- Transfers between bases
-- Asset assignments
-- Expenditures
-- Opening balance
-- Closing balance
-- Current asset quantities
-- Stock movement
+- Manage military bases
+- Manage equipment types
+- Track assets and inventory
+- Record purchases
+- Transfer assets between bases
+- Assign assets to personnel
+- Record expenditures
+- Monitor current stock
+- View inventory statistics through a dashboard
+- Secure the application using authentication and authorization
 
-The application includes an authenticated admin dashboard where users can securely access different modules based on their permissions.
+The system automatically updates asset quantities when purchases, transfers, assignments, and expenditures are recorded.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 🔐 Authentication
+## 🔐 Authentication
 
 - Admin login
-- Password hashing using bcrypt
 - JWT-based authentication
+- Password hashing using bcrypt
 - Protected API routes
-- Token-based authorization
+- Role-based access control
+- Bearer token authorization
 - Secure logout
-- Authentication persistence using browser storage
+- Authentication persistence
 
-### 📊 Dashboard
+---
 
-The dashboard provides an overview of asset stock and movement.
+## 👨‍💼 Demo Admin Credentials
 
-It displays:
+Use the following credentials to access the deployed demo application.
 
-- Opening Balance
-- Purchases
-- Transfer In
-- Transfer Out
-- Assigned Assets
-- Expended Assets
-- Closing Balance
-- Current Assets
+### Login URL
 
-The dashboard also provides a stock movement summary.
+https://military-asset-management-client.onrender.com/login
 
-Example:
+### Credentials
 
 ```text
-Opening
-   +
-Purchases
-   +
-Transfer In
-   -
-Transfer Out
-   -
-Assigned
-   -
-Expended
-   =
-Closing Balance
+Email: admin@military.com
+Password: Admin@123
+Role: ADMIN
