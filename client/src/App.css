@@ -1,0 +1,1395 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-navigation {
+  width: 100%;
+  min-height: 64px;
+  background: #0f172a;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 42px;
+  gap: 20px;
+}
+
+.nav-brand {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #93c5fd;
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-button {
+  border: none;
+  background: #ef4444;
+  color: white;
+
+  padding: 10px 18px;
+  border-radius: 6px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #dc2626;
+}
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 32px 42px 60px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.dashboard-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.refresh-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+
+  padding: 11px 20px;
+  border-radius: 7px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================
+   BASE SECTION
+========================================= */
+
+.base-section {
+  margin-bottom: 42px;
+}
+
+.base-header {
+  margin-bottom: 16px;
+}
+
+.base-header h2 {
+  margin: 0 0 5px;
+  font-size: 23px;
+}
+
+.base-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.dashboard-card {
+  background: white;
+
+  min-height: 115px;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #64748b;
+}
+
+.dashboard-card p {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.closing-card {
+  border-left: 5px solid #16a34a;
+}
+
+.asset-card {
+  border-left: 5px solid #2563eb;
+}
+
+/* =========================================
+   STOCK MOVEMENT
+========================================= */
+
+.movement-section {
+  margin-top: 18px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.movement-section h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.movement {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  color: #334155;
+
+  font-size: 15px;
+}
+
+.movement strong {
+  margin-left: 5px;
+  color: #0f172a;
+}
+
+.closing-value {
+  color: #15803d;
+}
+
+.closing-value strong {
+  color: #15803d;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+  background: #fee2e2;
+  color: #b91c1c;
+
+  padding: 14px 16px;
+
+  border-radius: 7px;
+
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+
+  background: white;
+
+  padding: 36px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.10);
+}
+
+.login-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 25px;
+}
+
+.login-subtitle {
+  margin: 8px 0 30px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.login-button {
+  width: 100%;
+
+  border: none;
+
+  padding: 12px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background: #1d4ed8;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 900px) {
+
+  .main-navigation {
+    padding: 15px 22px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+  }
+
+  .dashboard-page {
+    padding: 25px 22px 50px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .main-navigation {
+    padding: 15px;
+
+    gap: 14px;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .dashboard-page {
+    padding: 20px 15px 40px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  .refresh-button {
+    width: 100%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    min-height: 105px;
+  }
+
+  .dashboard-card p {
+    font-size: 25px;
+  }
+
+  .movement {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .movement > span {
+    width: 100%;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 22px;
+  }
+
+}
+/* =========================================================
+   PURCHASES PAGE
+========================================================= */
+
+.purchases-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.page-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+.purchase-form-card,
+.purchase-list-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.purchase-form-card h2,
+.purchase-list-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.submit-button,
+.refresh-button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-button {
+    margin-top: 22px;
+    background: #2563eb;
+    color: white;
+}
+
+.submit-button:hover {
+    background: #1d4ed8;
+}
+
+.refresh-button {
+    background: #1e293b;
+    color: white;
+}
+
+.refresh-button:hover {
+    background: #0f172a;
+}
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.success-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.error-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.loading-message,
+.empty-message {
+    padding: 20px 0;
+    color: #64748b;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-container table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.table-container th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.table-container tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .purchases-page {
+        padding: 24px 16px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .purchase-form-card,
+    .purchase-list-card {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .purchases-page {
+        padding: 20px 12px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .refresh-button {
+        width: 100%;
+    }
+
+    .purchase-form-card,
+    .purchase-list-card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .purchase-form-card h2,
+    .purchase-list-card h2 {
+        font-size: 21px;
+    }
+
+    .form-group input {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .submit-button {
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .table-container {
+        margin-top: 10px;
+    }
+
+    .table-container table {
+        min-width: 750px;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+}
+/* =========================================================
+   TRANSFERS PAGE
+========================================================= */
+
+.transfers-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
+
+.transfers-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.transfers-page .page-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.transfers-page .page-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+.transfer-form-card,
+.transfer-filter-card,
+.transfer-list-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.transfer-form-card h2,
+.transfer-filter-card h2,
+.transfer-list-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   TRANSFER FORM
+========================================================= */
+
+.transfer-form-card .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.transfer-form-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.transfer-form-card .form-group label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.transfer-form-card .form-group input,
+.transfer-form-card .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.transfer-form-card .form-group input:focus,
+.transfer-form-card .form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.transfer-form-card .submit-button {
+    margin-top: 22px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.transfer-form-card .submit-button:hover {
+    background: #1d4ed8;
+}
+
+/* =========================================================
+   TRANSFER FILTERS
+========================================================= */
+
+.transfer-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.transfer-filter-grid .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.transfer-filter-grid label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.transfer-filter-grid input,
+.transfer-filter-grid select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* =========================================================
+   TRANSFER TABLE
+========================================================= */
+
+.transfer-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.transfer-table-container table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.transfer-table-container th,
+.transfer-table-container td {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.transfer-table-container th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.transfer-table-container tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================================================
+   TRANSFER MESSAGES
+========================================================= */
+
+.transfer-success-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.transfer-error-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .transfers-page {
+        padding: 24px 16px;
+    }
+
+    .transfers-page .page-header {
+        align-items: flex-start;
+    }
+
+    .transfers-page .page-header h1 {
+        font-size: 28px;
+    }
+
+    .transfer-form-card,
+    .transfer-filter-card,
+    .transfer-list-card {
+        padding: 20px;
+    }
+
+    .transfer-form-card .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .transfer-filter-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .transfers-page {
+        padding: 20px 12px;
+    }
+
+    .transfers-page .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .transfers-page .page-header h1 {
+        font-size: 25px;
+    }
+
+    .transfers-page .page-header p {
+        font-size: 14px;
+    }
+
+    .transfers-page .refresh-button {
+        width: 100%;
+    }
+
+    .transfer-form-card,
+    .transfer-filter-card,
+    .transfer-list-card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .transfer-form-card h2,
+    .transfer-filter-card h2,
+    .transfer-list-card h2 {
+        font-size: 21px;
+    }
+
+    .transfer-form-card .form-group input,
+    .transfer-form-card .form-group select,
+    .transfer-filter-grid input,
+    .transfer-filter-grid select {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .transfer-form-card .submit-button {
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .transfer-table-container table {
+        min-width: 850px;
+    }
+
+    .transfer-table-container th,
+    .transfer-table-container td {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+}
+/* =========================================================
+   ASSIGNMENTS & EXPENDITURES PAGE
+========================================================= */
+
+.assignments-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.assignments-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.assignments-page .page-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.assignments-page .page-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.assignment-form-card,
+.assignment-filter-card,
+.assignment-list-card,
+.expenditure-form-card,
+.expenditure-list-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.assignment-form-card h2,
+.assignment-filter-card h2,
+.assignment-list-card h2,
+.expenditure-form-card h2,
+.expenditure-list-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.assignment-form-card .form-grid,
+.expenditure-form-card .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.assignment-form-card .form-group,
+.expenditure-form-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.assignment-form-card .form-group label,
+.expenditure-form-card .form-group label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.assignment-form-card .form-group input,
+.assignment-form-card .form-group select,
+.expenditure-form-card .form-group input,
+.expenditure-form-card .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.assignment-form-card .form-group input:focus,
+.assignment-form-card .form-group select:focus,
+.expenditure-form-card .form-group input:focus,
+.expenditure-form-card .form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.assignment-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.assignment-filter-grid .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.assignment-filter-grid label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.assignment-filter-grid input,
+.assignment-filter-grid select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* =========================================================
+   SUBMIT BUTTONS
+========================================================= */
+
+.assignment-form-card .submit-button,
+.expenditure-form-card .submit-button {
+    margin-top: 22px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.assignment-form-card .submit-button:hover,
+.expenditure-form-card .submit-button:hover {
+    background: #1d4ed8;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.assignment-table-container,
+.expenditure-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.assignment-table-container table,
+.expenditure-table-container table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.assignment-table-container th,
+.assignment-table-container td,
+.expenditure-table-container th,
+.expenditure-table-container td {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.assignment-table-container th,
+.expenditure-table-container th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.assignment-table-container tbody tr:hover,
+.expenditure-table-container tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================================================
+   SUCCESS / ERROR
+========================================================= */
+
+.assignment-success-message,
+.expenditure-success-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.assignment-error-message,
+.expenditure-error-message {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .assignments-page {
+        padding: 24px 16px;
+    }
+
+    .assignments-page .page-header {
+        align-items: flex-start;
+    }
+
+    .assignments-page .page-header h1 {
+        font-size: 28px;
+    }
+
+    .assignment-form-card,
+    .assignment-filter-card,
+    .assignment-list-card,
+    .expenditure-form-card,
+    .expenditure-list-card {
+        padding: 20px;
+    }
+
+    .assignment-form-card .form-grid,
+    .expenditure-form-card .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .assignment-filter-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .assignments-page {
+        padding: 20px 12px;
+    }
+
+    .assignments-page .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .assignments-page .page-header h1 {
+        font-size: 25px;
+    }
+
+    .assignments-page .page-header p {
+        font-size: 14px;
+    }
+
+    .assignments-page .refresh-button {
+        width: 100%;
+    }
+
+    .assignment-form-card,
+    .assignment-filter-card,
+    .assignment-list-card,
+    .expenditure-form-card,
+    .expenditure-list-card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .assignment-form-card h2,
+    .assignment-filter-card h2,
+    .assignment-list-card h2,
+    .expenditure-form-card h2,
+    .expenditure-list-card h2 {
+        font-size: 21px;
+    }
+
+    .assignment-form-card .form-group input,
+    .assignment-form-card .form-group select,
+    .expenditure-form-card .form-group input,
+    .expenditure-form-card .form-group select,
+    .assignment-filter-grid input,
+    .assignment-filter-grid select {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .assignment-form-card .submit-button,
+    .expenditure-form-card .submit-button {
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .assignment-table-container table,
+    .expenditure-table-container table {
+        min-width: 800px;
+    }
+
+    .assignment-table-container th,
+    .assignment-table-container td,
+    .expenditure-table-container th,
+    .expenditure-table-container td {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+}
