@@ -7,17 +7,42 @@ const createAdmin = async () => {
     const email = "admin@military.com";
     const password = "Admin@123";
 
+    const passwordHash = await bcrypt.hash(password, 12);
+
     const existingUser = await pool.query(
       "SELECT id FROM users WHERE email = $1",
       [email]
     );
 
     if (existingUser.rows.length > 0) {
-      console.log("Admin user already exists.");
+      await pool.query(
+        `
+        UPDATE users
+        SET
+          name = $1,
+          password_hash = $2,
+          role = $3,
+          base_id = $4
+        WHERE email = $5
+        `,
+        [
+          name,
+          passwordHash,
+          "ADMIN",
+          null,
+          email,
+        ]
+      );
+
+      console.log("=================================");
+      console.log("Admin user password reset successfully");
+      console.log("Email:", email);
+      console.log("Password:", password);
+      console.log("Role: ADMIN");
+      console.log("=================================");
+
       return;
     }
-
-    const passwordHash = await bcrypt.hash(password, 12);
 
     await pool.query(
       `
@@ -47,9 +72,8 @@ const createAdmin = async () => {
     console.log("Password:", password);
     console.log("Role: ADMIN");
     console.log("=================================");
-
   } catch (error) {
-    console.error("Error creating admin:", error);
+    console.error("Error creating/resetting admin:", error);
   } finally {
     await pool.end();
   }
