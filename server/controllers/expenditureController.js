@@ -298,4 +298,4 @@ module.exports = {
     createExpenditure,
     getExpenditures,
     getExpenditureById
-};
+}; 
