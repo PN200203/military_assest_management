@@ -6,6 +6,10 @@ require("dotenv").config();
 
 const pool = require("./config/db");
 
+// ==========================================
+// ROUTES
+// ==========================================
+
 const authRoutes = require("./routes/authRoutes");
 const rbacRoutes = require("./routes/rbacRoutes");
 const equipmentTypeRoutes = require("./routes/equipmentTypeRoutes");
@@ -16,20 +20,33 @@ const assignmentRoutes = require("./routes/assignmentRoutes");
 const expenditureRoutes = require("./routes/expenditureRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 
+// ==========================================
+// APP
+// ==========================================
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
 // ==========================================
-// MIDDLEWARE
+// CORS
 // ==========================================
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://military-asset-management-client.onrender.com",
+    ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// ==========================================
+// BODY PARSERS
+// ==========================================
 
 app.use(express.json());
 
@@ -41,21 +58,45 @@ app.use(
 
 app.use(cookieParser());
 
+// ==========================================
+// API ROUTES
+// ==========================================
+
 app.use("/api/auth", authRoutes);
+
 app.use("/api/rbac", rbacRoutes);
+
 app.use(
   "/api/equipment-types",
   equipmentTypeRoutes
 );
+
 app.use("/api/assets", assetRoutes);
+
 app.use(
   "/api/purchases",
   purchaseRoutes
 );
-app.use("/api/transfers", transferRoutes);
-app.use("/api/assignments", assignmentRoutes);
-app.use("/api/expenditures", expenditureRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+
+app.use(
+  "/api/transfers",
+  transferRoutes
+);
+
+app.use(
+  "/api/assignments",
+  assignmentRoutes
+);
+
+app.use(
+  "/api/expenditures",
+  expenditureRoutes
+);
+
+app.use(
+  "/api/dashboard",
+  dashboardRoutes
+);
 
 // ==========================================
 // HOME ROUTE
