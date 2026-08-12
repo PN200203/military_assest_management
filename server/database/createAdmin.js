@@ -7,14 +7,17 @@ const createAdmin = async () => {
     const email = "admin@military.com";
     const password = "Admin@123";
 
+    // Hash the password
     const passwordHash = await bcrypt.hash(password, 12);
 
+    // Check whether admin already exists
     const existingUser = await pool.query(
       "SELECT id FROM users WHERE email = $1",
       [email]
     );
 
     if (existingUser.rows.length > 0) {
+      // Update existing admin
       await pool.query(
         `
         UPDATE users
@@ -44,6 +47,7 @@ const createAdmin = async () => {
       return;
     }
 
+    // Create new admin if it doesn't exist
     await pool.query(
       `
       INSERT INTO users
